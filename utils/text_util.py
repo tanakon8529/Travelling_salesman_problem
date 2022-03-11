@@ -6,5 +6,3 @@ class text_controls(object):
         txt = open(path, "r")
         txt.close
         return txt
-
-    def 

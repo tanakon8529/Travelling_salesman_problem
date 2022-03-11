@@ -3,6 +3,7 @@ class text_controls(object):
         self.blabla = ''
 
     def read_text(self, path):
-        txt = open(path, "r")
-        txt.close
-        return txt
+        file = open(path, "r")
+        text_file = file.read()
+        file.close
+        return text_file

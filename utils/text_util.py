@@ -13,9 +13,6 @@ class text_controls(object):
         file.close
         return text_file
 
-    def get_all_file_name_in_folder(self):
-        return [f for f in listdir(self.folder) if isfile(join(self.folder, f))]
-
     def convert_txt_to_json(self, name_file):
         txt_file = self.read_text(self.folder+name_file)
         pack_res = txt_file.splitlines()
@@ -45,3 +42,12 @@ class text_controls(object):
                 pack_header[item[0]] = {"N" : N[1], "seed" : seed[1]}
     
         return pack_header, pack_data
+
+    def get_all_file_name_in_folder(self):
+        all_file_name = [f for f in listdir(self.folder) if isfile(join(self.folder, f))]
+        data_pack = {}
+        for files_name in all_file_name:
+            pack_header, pack_data = self.convert_txt_to_json(files_name)
+            pack_data["header"] = pack_header
+            data_pack[files_name] = pack_data
+        return data_pack

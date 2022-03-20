@@ -1,3 +1,4 @@
 # cache and test files
+*/other
 */__pycache__
 test.py

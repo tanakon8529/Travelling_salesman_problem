@@ -1,8 +1,8 @@
 # Ramkhamhaeng University
 ```
 CPE4196 Group :
-- 6451000977
--
+- 6451000977 tanakon kabpraun
+- 6151001556 autthasit sanongsat
 -
 -
 -

@@ -6,7 +6,7 @@ CPE4196 Group :
 - 6251001324 porramin patumrat
 - 6251000946 piyaphong nakphan
 - 6251000573 Sarawut thepniyom
--
+- 6251000912 Tharathorn Matmueang
 ```
 
 # required

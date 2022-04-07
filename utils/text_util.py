@@ -43,7 +43,7 @@ class text_controls(object):
     
         return pack_header, pack_data
 
-    def get_all_file_name_in_folder(self):
+    def get_all_filename_and_data_in_folder(self):
         all_file_name = [f for f in listdir(self.folder) if isfile(join(self.folder, f))]
         data_pack = {}
         for files_name in all_file_name:
@@ -51,3 +51,17 @@ class text_controls(object):
             pack_data["header"] = pack_header
             data_pack[files_name] = pack_data
         return data_pack
+
+    def spilt_data_pack(self):
+        data_pack = self.get_all_filename_and_data_in_folder()
+
+        data_pack_spilt = {}
+        list_coordinates_pack = []
+        for file_name, data in data_pack.items():
+            node_coord_section = data["NODE_COORD_SECTION"]
+            for order_point, point in node_coord_section.items():
+                list_coordinates = list(point)
+                list_coordinates_pack.append(list_coordinates)
+            data_pack_spilt[file_name] = list_coordinates_pack
+
+        return data_pack_spilt

@@ -13,11 +13,14 @@ CPE4196 Group :
 work on python 3.9.6 (Ubuntu 20.04)
 
 # Quick Start
-  
-```
-python main.py
-```
-or
-```
-python3 main.py
-```
+
+1. pip install -r requirements.txt
+ 
+ 
+2.  ```
+    python main.py
+    ```
+    or
+    ```
+    python3 main.py
+    ```

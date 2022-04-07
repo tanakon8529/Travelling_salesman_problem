@@ -1,25 +1,22 @@
 from utils.text_util import text_controls
+
+from pprint import pprint
 import random
 
 class travelling_salesman_problen(object):
     def __init__(self):
         self.txt = text_controls()
 
-    def generate_graph_size(self, x, y):
-        print(x, y)
+    def distance_between_point(self, point1, point2):
+        # d^2 = (x2-x1)^2 + (y2-y1)^2
+        distance = ( (point2[0]-point1[0])^2 + (point2[1]-point1[1])^2 )^2
+        print(distance)
 
     def process_run(self):
-        data_pack = self.txt.get_all_file_name_in_folder()
-        for file_name, data in data_pack.items():
-            node_coord_section = data["NODE_COORD_SECTION"]
-            header = data["header"]
-            # print(file_name, header)
-            for point, coordinates in node_coord_section.items():
-                # print(point, coordinates)
-                list_coordinates = list(coordinates)
-
-                # skip list out of range
-                try: 
-                    res = self.generate_graph_size(list_coordinates[0], list_coordinates[1])
-                except Exception as e:
-                    pass
+        data_pack = self.txt.spilt_data_pack()
+        for order, data in data_pack.items():
+            # print(order, data)
+            init_point = random.choice(data)
+            for point in data:
+                print(point)
+            

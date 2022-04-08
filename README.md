@@ -16,6 +16,7 @@ work on python 3.9.6 (Ubuntu 20.04)
 1. pip install -r requirements.txt
  
 2. ***main.py***
+
 --- Select file_name.txt --- 
 - gC100_01 to 10
 - gC200_01 to 10

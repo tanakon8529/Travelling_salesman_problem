@@ -1,5 +1,3 @@
-from cmath import pi
-from turtle import distance
 from utils.text_util import text_controls
 
 from pprint import pprint

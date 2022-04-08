@@ -28,7 +28,10 @@ class text_controls(object):
         for line in pack_res:
             if pack_res.index(line) > 5:
                 in_line = line.split(" ")
+                if in_line[1] == in_line[2]:
+                    pack_node[in_line[0]] = {in_line[1], in_line[2]}
                 pack_node[in_line[0]] = {in_line[1], in_line[2]}
+
 
         pack_data["NODE_COORD_SECTION"] = pack_node
             
@@ -56,12 +59,13 @@ class text_controls(object):
         data_pack = self.get_all_filename_and_data_in_folder()
 
         data_pack_spilt = {}
-        list_coordinates_pack = []
         for file_name, data in data_pack.items():
+            list_coordinates_pack = []
             node_coord_section = data["NODE_COORD_SECTION"]
             for order_point, point in node_coord_section.items():
                 list_coordinates = list(point)
                 list_coordinates_pack.append(list_coordinates)
+            
             data_pack_spilt[file_name] = list_coordinates_pack
 
         return data_pack_spilt
